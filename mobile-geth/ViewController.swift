@@ -8,15 +8,49 @@
 
 import UIKit
 import Geth
+import Alamofire
+import SwiftyJSON
+
 
 class ViewController: UIViewController {
     
 
     @IBOutlet weak var textbox: UITextView!
     
+    func reqDone(requestURL: String, completionHandler: @escaping (_ result: Bool) -> ()) {
+        Alamofire.request(requestURL).responseJSON { response in
+                
+                //to get status code
+                if let status = response.response?.statusCode {
+                    switch(status){
+                    case 200:
+                        //to get JSON return value
+                        if let result = response.result.value {
+                            let JSON = result as! NSDictionary
+                            print(JSON)
+                        }
+                        completionHandler(true)
+                    default:
+                        print("error with response status: \(status)")
+                        completionHandler(false)
+                    }
+                }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        reqDone(requestURL: "https://hupay.herokuapp.com/token/balance/0x5ff2c17ada131e5D9fa0f927395Abe35657e4768") { (result) in
+            if(result)
+            {
+                print("Correct!")
+            }
+            else{
+                print("Wrong Credentials")
+            }
+        }
         
         let datadir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         let ks = GethNewKeyStore(datadir + "/keystore", GethLightScryptN, GethLightScryptP)

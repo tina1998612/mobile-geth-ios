@@ -7,5 +7,7 @@ target 'mobile-geth' do
 
   # Pods for mobile-geth
   pod 'Geth' # Change the version to the latest release
+  pod 'Alamofire', '~> 4.6'
+  pod 'SwiftyJSON'
 
 end
