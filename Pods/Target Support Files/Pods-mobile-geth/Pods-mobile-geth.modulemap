@@ -1,0 +1,6 @@
+framework module Pods_mobile_geth {
+  umbrella header "Pods-mobile-geth-umbrella.h"
+
+  export *
+  module * { export * }
+}

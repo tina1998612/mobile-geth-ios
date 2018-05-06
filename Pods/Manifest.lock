@@ -1,0 +1,16 @@
+PODS:
+  - Geth (1.8.1)
+
+DEPENDENCIES:
+  - Geth
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Geth
+
+SPEC CHECKSUMS:
+  Geth: b39574e8d037c7752f73f3e5320855581e1cf75a
+
+PODFILE CHECKSUM: ff0b013d74cf7e4195b8328918bba2e87e912c66
+
+COCOAPODS: 1.5.0

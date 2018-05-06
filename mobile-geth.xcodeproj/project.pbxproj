@@ -12,6 +12,7 @@
 		261CF2F9209EE2D800290DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261CF2F7209EE2D800290DDD /* Main.storyboard */; };
 		261CF2FB209EE2DB00290DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 261CF2FA209EE2DB00290DDD /* Assets.xcassets */; };
 		261CF2FE209EE2DB00290DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 261CF2FC209EE2DB00290DDD /* LaunchScreen.storyboard */; };
+		336348F5835900408D734DEC /* Pods_mobile_geth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD89728FAC2D4A47B5A07AD4 /* Pods_mobile_geth.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		261CF2FA209EE2DB00290DDD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		261CF2FD209EE2DB00290DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		261CF2FF209EE2DB00290DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C6D499756D761C94221EA2A6 /* Pods-mobile-geth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile-geth.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mobile-geth/Pods-mobile-geth.debug.xcconfig"; sourceTree = "<group>"; };
+		CD89728FAC2D4A47B5A07AD4 /* Pods_mobile_geth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mobile_geth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FE9F72618E73F3FF47D65C8F /* Pods-mobile-geth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mobile-geth.release.xcconfig"; path = "Pods/Target Support Files/Pods-mobile-geth/Pods-mobile-geth.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				336348F5835900408D734DEC /* Pods_mobile_geth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0672724C3BD45B910F20621D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CD89728FAC2D4A47B5A07AD4 /* Pods_mobile_geth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		261CF2E7209EE2D800290DDD = {
 			isa = PBXGroup;
 			children = (
 				261CF2F2209EE2D800290DDD /* mobile-geth */,
 				261CF2F1209EE2D800290DDD /* Products */,
+				7C69C148D1835D1F840AE013 /* Pods */,
+				0672724C3BD45B910F20621D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = "mobile-geth";
 			sourceTree = "<group>";
 		};
+		7C69C148D1835D1F840AE013 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6D499756D761C94221EA2A6 /* Pods-mobile-geth.debug.xcconfig */,
+				FE9F72618E73F3FF47D65C8F /* Pods-mobile-geth.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,6 +95,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 261CF302209EE2DB00290DDD /* Build configuration list for PBXNativeTarget "mobile-geth" */;
 			buildPhases = (
+				C916B59EC3354DCE7383F935 /* [CP] Check Pods Manifest.lock */,
 				261CF2EC209EE2D800290DDD /* Sources */,
 				261CF2ED209EE2D800290DDD /* Frameworks */,
 				261CF2EE209EE2D800290DDD /* Resources */,
@@ -129,6 +154,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C916B59EC3354DCE7383F935 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mobile-geth-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		261CF2EC209EE2D800290DDD /* Sources */ = {
@@ -278,14 +324,12 @@
 		};
 		261CF303209EE2DB00290DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6D499756D761C94221EA2A6 /* Pods-mobile-geth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "mobile-geth/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tina.mobile-geth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -295,14 +339,12 @@
 		};
 		261CF304209EE2DB00290DDD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE9F72618E73F3FF47D65C8F /* Pods-mobile-geth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "mobile-geth/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.tina.mobile-geth";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
